@@ -1,7 +1,7 @@
 # Project Report: Evolutionary Approach to Sentiment Analysis
 
 **Author:** Sachin Basyal 
-**Date:** January 2026  
+**Date:** December 2025  
 **Tech Stack:** Python, Scikit-Learn, XGBoost, LightGBM, MLflow, DagsHub, Optuna  
 
 ---
@@ -14,7 +14,7 @@ Through a series of six controlled experiments, we evolved our approach from a b
 ---
 
 ## 2. Table of Contents
-1. [Phase 1: Exploratory Data Analysis (EDA)](#phase-1-exploratory-data-analysis-eda)
+1. [Exploratory Data Analysis (EDA)](#phase-1-exploratory-data-analysis-eda)
 2. [Experiment 01 & 02: Baseline Modeling & Text Representation](#experiment-01--02-baseline-modeling--text-representation)
 3. [Experiment 03: Feature Space Optimization](#experiment-03-feature-space-optimization)
 4. [Experiment 04: Addressing Class Imbalance](#experiment-04-addressing-class-imbalance)
@@ -33,8 +33,11 @@ Through a series of six controlled experiments, we evolved our approach from a b
 * **Text Noise:** Raw data contained significant noise, including emojis, URLs, and slang. We implemented a cleaning pipeline to normalize text (lowercase, punctuation removal) while preserving semantic meaning.
 * **Word Clouds:** Positive comments were characterized by words like "good," "great," and "love," while negative comments contained distinct markers like "bad," "hate," and "worst," confirming that vocabulary-based approaches (like TF-IDF) would be effective.
 
-![Word Cloud Visualization](path_to_your_images/wordcloud_eda.png)
-*(Placeholder: Upload your wordcloud image to the repo and link it here)*
+![Word Cloud Visualization](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/WordCloud_%2Bve.png)
+![Negative Words](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/WordCloud_-ve.png)
+
+**Detail Report* [Link-EDA](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/01_SentimentAnalysis-EDA.ipynb)
+
 
 ---
 
@@ -50,9 +53,14 @@ We compared **Unigrams (single words)** vs. **Bigrams (word pairs)** vs. **Trigr
 * **Bigrams (1,2):** Significantly outperformed Unigrams by capturing negations and short phrases.
 * **Performance Ceiling:** The baseline model achieved approximately **66% Accuracy**.
 
+![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-02.png)
+
 **Conclusion:**
 While Bigrams provided the best text representation, the Random Forest model hit a "performance wall." It struggled to distinguish subtle negative sentiments, likely due to the class imbalance identified in EDA.
 
+**Detail Reports* 
+- [Link-Exp_01](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/02_Exp_01_Baseline_Model.ipynb)
+- [Link-Exp_02](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/03_Exp_02_BOW_TF_IDF.ipynb)
 ---
 
 <a name="experiment-03-feature-space-optimization"></a>
@@ -68,6 +76,10 @@ Surprisingly, increasing the feature size did *not* linearly improve performance
 **Decision:**
 We standardized on **1,000 features** for the intermediate experiments to maintain training speed, though we noted that advanced models (like Linear Regressors) might benefit from larger feature spaces later.
 
+![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-03.png)
+
+**Detail Report* [[Link-Exp_03](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/04_Exp_03_TFIDF_1_2_MaxFeatures.ipynb)]
+
 ---
 
 <a name="experiment-04-addressing-class-imbalance"></a>
@@ -82,6 +94,10 @@ We compared three strategies to handle the skewed data:
 
 **Results:**
 **SMOTE** was the decisive winner. By augmenting the minority class in the training set, we forced the model to learn the decision boundary for "Negative" comments. This experiment was the turning point where we began to see the model actually recognize hostility and criticism.
+
+![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-04.png)
+
+**Detail Report* [[Link-Exp_04](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/05_Exp_04_Handling_Imbalanced_Data.ipynb)
 
 ---
 
@@ -101,8 +117,36 @@ We compared three strategies to handle the skewed data:
 **Analysis:**
 The switch to boosting provided a massive **+11.5% gain**. The model showed excellent generalization (CV score and Test score were within 1%), proving it was robust and not overfitting.
 
+![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-05.png)
+
+**Detail Report* [Link-Exp_05](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/05_Exp_04_Handling_Imbalanced_Data.ipynb)
+
 ---
 
+<a name="experiment-06-stacking-ensemble-the-champion-model"></a>
+## Experiment 06: Stacking Ensemble (The Champion Model)
+**Hypothesis:** A single model has biases. Combining a **Linear Model** (good at high-dimensional text) with a **Non-Linear Tree Model** (good at interactions) will yield superior results.
+
+**Methodology:**
+We constructed a **Stacking Classifier**:
+* **Base Learner 1:** Logistic Regression (Linear) – effective on sparse TF-IDF matrices.
+* **Base Learner 2:** LightGBM (Gradient Boosting) – effective on complex patterns.
+* **Meta Learner:** K-Nearest Neighbors (KNN) – combines predictions based on proximity.
+* **Feature Expansion:** We increased TF-IDF features to **10,000** with **Trigrams**, hypothesizing that the Logistic Regression component could handle the sparsity better than trees alone.
+
+![Stacking Confusion Matrix](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-06_confusion_matrix.png)
+
+**Final Results:**
+* **XGBoost (Exp 05):** 77.5%
+* **Stacking Ensemble:** **85.97%** 🚀
+
+**Conclusion:**
+
+This architecture achieved our highest accuracy to date. The combination of linear and tree-based decision boundaries allowed the model to capture both simple keyword associations (e.g., "bad" = Negative) and complex contextual sarcasm.
+
+**Detail Report* [Link-Exp_06](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/07_Experiment_06_Stacking.ipynb)
+
+---
 <a name="final-conclusion--future-work"></a>
 ## 7. Final Conclusion & Future Work
 
@@ -127,4 +171,4 @@ To further elevate this project from a research prototype to a production system
 3.  **Real-Time Deployment:** Develop a **Google Chrome Plugin** that utilizes our champion Stacking Model to perform real-time sentiment analysis on **YouTube Live Comments**, providing content creators with instant, actionable feedback on audience engagement.
 
 ---
-*For more details, please view the [Notebooks](./notebooks) or contact the author.*
+*For more details, please view the [Notebooks](https://github.com/sachinbasyal/social-media-sentiment-stacking/tree/main/Notebooks) or contact the author.*
