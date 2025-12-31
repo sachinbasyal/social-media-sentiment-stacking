@@ -154,7 +154,7 @@ We constructed a **Stacking Classifier**:
 
 **Final Results:**
 * **XGBoost (Exp 05):** 77.5%
-* **Stacking Ensemble:** **85.97%**
+* **Stacking Ensemble:** **86%**
 
 **Conclusion:**
 
