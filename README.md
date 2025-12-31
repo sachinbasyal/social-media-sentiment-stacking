@@ -103,4 +103,28 @@ The switch to boosting provided a massive **+11.5% gain**. The model showed exce
 
 ---
 
-<a name
+<a name="final-conclusion--future-work"></a>
+## 7. Final Conclusion & Future Work
+
+### Summary of Achievement
+This project demonstrates a disciplined, scientific approach to Machine Learning. We did not simply "try models until one worked." Instead, we diagnosed specific bottlenecks (Imbalance, Sparsity, Model Bias) and applied targeted solutions (SMOTE, Feature Tuning, Stacking).
+
+**Final Metrics (Test Set):**
+* **Accuracy:** 86%
+* **Precision (Weighted):** 0.86
+* **Recall (Weighted):** 0.86
+
+### Capabilities Demonstrated
+* **MLops:** Utilized MLflow and DagsHub for experiment tracking and reproducibility.
+* **Data Engineering:** Built robust pipelines to handle parsing errors, label mapping, and vectorization.
+* **Advanced Modeling:** Implemented state-of-the-art Ensemble techniques (Stacking) and Bayesian Optimization (Optuna).
+
+### Future Work
+To further elevate this project from a research prototype to a production system, the following steps are proposed:
+
+1.  **Deep Learning Integration:** Explore Transformer-based architectures (**BERT/RoBERTa**) to capture deep semantic context and bidirectional dependencies that TF-IDF vectors may miss.
+2.  **Advanced MLOps Pipeline:** Integrate **DVC (Data Version Control)** to build end-to-end MLOps pipelines. This will ensure that large datasets are versioned alongside code, creating a fully reproducible training lineage.
+3.  **Real-Time Deployment:** Develop a **Google Chrome Plugin** that utilizes our champion Stacking Model to perform real-time sentiment analysis on **YouTube Live Comments**, providing content creators with instant, actionable feedback on audience engagement.
+
+---
+*For more details, please view the [Notebooks](./notebooks) or contact the author.*
