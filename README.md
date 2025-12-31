@@ -78,7 +78,7 @@ We standardized on **1,000 features** for the intermediate experiments to mainta
 
 ![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-03.png)
 
-**Detail Report* [[Link-Exp_03](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/04_Exp_03_TFIDF_1_2_MaxFeatures.ipynb)]
+**Detail Report* [Link-Exp_03](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/04_Exp_03_TFIDF_1_2_MaxFeatures.ipynb)
 
 ---
 
@@ -119,7 +119,7 @@ The switch to boosting provided a massive **+11.5% gain**. The model showed exce
 
 ![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-05.png)
 
-**Detail Report* [Link-Exp_05](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/05_Exp_04_Handling_Imbalanced_Data.ipynb)
+**Detail Report* [Link-Exp_05](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/06_Exp_05_XGBoost_HPT.ipynb)
 
 ---
 
