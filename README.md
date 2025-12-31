@@ -97,7 +97,7 @@ We compared three strategies to handle the skewed data:
 
 ![Result](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-04.png)
 
-**Detail Report* [[Link-Exp_04](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/05_Exp_04_Handling_Imbalanced_Data.ipynb)
+**Detail Report* [Link-Exp_04](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/Notebooks/05_Exp_04_Handling_Imbalanced_Data.ipynb)
 
 ---
 
