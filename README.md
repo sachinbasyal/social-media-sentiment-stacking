@@ -25,7 +25,7 @@ Through a series of six controlled experiments, we evolved our approach from a b
 ---
 
 <a name="phase-1-exploratory-data-analysis-eda"></a>
-## Phase 1: Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 **Objective:** To understand the distribution, quality, and linguistic characteristics of the dataset before modeling.
 
 **Key Findings:**
