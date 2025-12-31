@@ -187,4 +187,4 @@ To further elevate this project from a research prototype to a production system
 3.  **Real-Time Deployment:** Develop a **Google Chrome Plugin** that utilizes our champion Stacking Model to perform real-time sentiment analysis on **YouTube Live Comments**, providing content creators with instant, actionable feedback on audience engagement.
 
 ---
-*For more details, please view the [Notebooks](https://github.com/sachinbasyal/social-media-sentiment-stacking/tree/main/Notebooks) or contact the author.*
+*For more details, please view the [Notebooks](https://github.com/sachinbasyal/social-media-sentiment-stacking/tree/main/Notebooks) or contact me.*
