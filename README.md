@@ -134,6 +134,22 @@ We constructed a **Stacking Classifier**:
 * **Meta Learner:** K-Nearest Neighbors (KNN) – combines predictions based on proximity.
 * **Feature Expansion:** We increased TF-IDF features to **10,000** with **Trigrams**, hypothesizing that the Logistic Regression component could handle the sparsity better than trees alone.
 
+ **Classification Report:**
+
+  Stacking Complete. Accuracy: 0.8597
+              
+                  precision    recall  f1-score   support
+             0         0.86      0.94      0.90      2529
+             1         0.88      0.86      0.87      3154
+             2         0.81      0.73      0.77      1650
+        accuracy                           0.86      7333
+       macro avg       0.85      0.84      0.85      7333
+    weighted avg       0.86      0.86      0.86      7333
+
+🏃 View run Stacking_LGBM_LogReg_KNN at: https://dagshub.com/frivorocker/yt_baseline_model.mlflow/#/experiments/6/runs/ff987ac46b124062a32c7245e7108e28
+
+🧪 View experiment at: https://dagshub.com/frivorocker/yt_baseline_model.mlflow/#/experiments/6
+
 ![Stacking Confusion Matrix](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/Exp-06_confusion_matrix.png)
 
 **Final Results:**
