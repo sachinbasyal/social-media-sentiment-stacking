@@ -1,7 +1,7 @@
 # Project Report: Evolutionary Approach to Sentiment Analysis
 
 **Author:** Sachin Basyal 
-**Date:** December 2025  
+**Date:** January 2026  
 **Tech Stack:** Python, Scikit-Learn, XGBoost, LightGBM, MLflow, DagsHub, Optuna  
 
 ---
