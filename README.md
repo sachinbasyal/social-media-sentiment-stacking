@@ -4,6 +4,8 @@
 **Date:** January 2026  
 **Tech Stack:** Python, Scikit-Learn, XGBoost, LightGBM, MLflow, DagsHub, Optuna  
 
+![project_img](https://github.com/sachinbasyal/social-media-sentiment-stacking/blob/main/MLFlow%20Images/project_img.jpg)
+
 ---
 
 ## 1. Executive Summary
