@@ -7530,7 +7530,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Executive-Summary">1. Executive Summary<a class="anchor-link" href="#1.-Executive-Summary">¶</a></h2><p>This research project focused on building a robust Sentiment Analysis classifier for social media comments (Reddit/YouTube). The primary objective was to accurately classify comments into Positive, Neutral, and Negative categories, with a specific focus on overcoming the challenges of class imbalance and noisy unstructured text.</p>
+<h2 id="I.-Executive-Summary">I. Executive Summary<a class="anchor-link" href="#I.-Executive-Summary">¶</a></h2><p>This research project focused on building a robust Sentiment Analysis classifier for social media comments (Reddit/YouTube). The primary objective was to accurately classify comments into Positive, Neutral, and Negative categories, with a specific focus on overcoming the challenges of class imbalance and noisy unstructured text.</p>
 <p>Through a series of six controlled experiments, we evolved our approach from a baseline Random Forest model (Accuracy: ~66%) to a sophisticated Stacking Ensemble (Accuracy: ~86%). This report documents the experimental methodology, the "failures" that led to deeper insights, and the final architectural decisions.</p>
 </div>
 </div>
@@ -7542,7 +7542,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Table-of-Contents">2. Table of Contents<a class="anchor-link" href="#2.-Table-of-Contents">¶</a></h2><ul>
+<h2 id="II.-Table-of-Contents">II. Table of Contents<a class="anchor-link" href="#II.-Table-of-Contents">¶</a></h2><ul>
 <li><p><a href="#eda">Exploratory Data Analysis (EDA)</a></p>
 </li>
 <li><p><a href="#base_model">Experiment 01 &amp; 02: Baseline Modeling &amp; Text Representation</a></p>
@@ -7569,7 +7569,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="eda"></a></p>
-<h2 id="Exploratory-Data-Analysis-(EDA)">Exploratory Data Analysis (EDA)<a class="anchor-link" href="#Exploratory-Data-Analysis-(EDA)">¶</a></h2><p>Objective: To understand the distribution, quality, and linguistic characteristics of the dataset before modeling.</p>
+<h2 id="III.-Exploratory-Data-Analysis-(EDA)">III. Exploratory Data Analysis (EDA)<a class="anchor-link" href="#III.-Exploratory-Data-Analysis-(EDA)">¶</a></h2><p>Objective: To understand the distribution, quality, and linguistic characteristics of the dataset before modeling.</p>
 <p><strong>Key Findings:</strong></p>
 <p>Class Imbalance: The dataset was heavily skewed. Positive and Neutral comments dominated, while Negative comments (Class -1) were significantly underrepresented. This posed an early risk of the model biasing toward the majority classes.</p>
 <p>Text Noise: Raw data contained significant noise, including emojis, URLs, and slang. We implemented a cleaning pipeline to normalize text (lowercase, punctuation removal) while preserving semantic meaning.</p>
@@ -7606,7 +7606,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>*Detail Report <a href="Reports/01_SentimentAnalysis-EDA.html">[Link-EDA]</a></p>
+<p>*Detail Report <a href="Reports/01_SentimentAnalysis-EDA.html" rel="noopener noreferrer" target="_blank">
+[Link-EDA]
+</a></p>
 </div>
 </div>
 </div>
@@ -7618,7 +7620,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="base_model"></a></p>
-<h2 id="Experiment-01-&amp;-02:-Baseline-Modeling-&amp;-Text-Representation">Experiment 01 &amp; 02: Baseline Modeling &amp; Text Representation<a class="anchor-link" href="#Experiment-01-&amp;-02:-Baseline-Modeling-&amp;-Text-Representation">¶</a></h2><p><strong>Hypothesis:</strong> A simple Bag-of-Words approach with a Random Forest classifier will serve as a sufficient baseline.</p>
+<h2 id="IV.-Experiment-01-&amp;-02:-Baseline-Modeling-&amp;-Text-Representation">IV. Experiment 01 &amp; 02: Baseline Modeling &amp; Text Representation<a class="anchor-link" href="#IV.-Experiment-01-&amp;-02:-Baseline-Modeling-&amp;-Text-Representation">¶</a></h2><p><strong>Hypothesis:</strong> A simple Bag-of-Words approach with a Random Forest classifier will serve as a sufficient baseline.</p>
 <p>Methodology: We compared Unigrams (single words) vs. Bigrams (word pairs) vs. Trigrams. We utilized a Random Forest Classifier for its interpretability and resistance to overfitting.</p>
 </div>
 </div>
@@ -7648,8 +7650,12 @@ a.anchor-link {
 <p><strong>Conclusion:</strong> While Bigrams provided the best text representation, the Random Forest model hit a "performance wall." It struggled to distinguish subtle negative sentiments, likely due to the class imbalance identified in EDA.</p>
 <p>*Detail Reports</p>
 <ul>
-<li><a href="Reports/02_Exp_01_Baseline_Model.html">[Link-Exp_01]</a></li>
-<li><a href="Reports/03_Exp_02_BOW_TF_IDF.html">[Link-Exp_02]</a></li>
+<li><a href="Reports/02_Exp_01_Baseline_Model.html" rel="noopener noreferrer" target="_blank">
+ [Link-Exp_01]</a>
+</li>
+<li><a href="Reports/03_Exp_02_BOW_TF_IDF.html" rel="noopener noreferrer" target="_blank">
+ [Link-Exp_02]</a>
+</li>
 </ul>
 </div>
 </div>
@@ -7662,7 +7668,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="feature_opt"></a></p>
-<h2 id="Experiment-03:-Feature-Space-Optimization">Experiment 03: Feature Space Optimization<a class="anchor-link" href="#Experiment-03:-Feature-Space-Optimization">¶</a></h2><p><strong>Objective:</strong> To determine the optimal vocabulary size (max_features) for the TF-IDF vectorizer.</p>
+<h2 id="V.-Experiment-03:-Feature-Space-Optimization">V. Experiment 03: Feature Space Optimization<a class="anchor-link" href="#V.-Experiment-03:-Feature-Space-Optimization">¶</a></h2><p><strong>Objective:</strong> To determine the optimal vocabulary size (max_features) for the TF-IDF vectorizer.</p>
 <p><strong>Methodology:</strong> We ran an optimization loop testing vocabulary sizes ranging from 1,000 to 10,000 features. We tracked the trade-off between Accuracy and Computational Cost using MLflow.</p>
 </div>
 </div>
@@ -7687,7 +7693,9 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Observation:</strong> Surprisingly, increasing the feature size did not linearly improve performance. The model reached an "elbow point" at 1,000 features, where adding more rare words introduced noise (sparsity) rather than signal.</p>
 <p><strong>Decision:</strong> We standardized on 1,000 features for the intermediate experiments to maintain training speed, though we noted that advanced models (like Linear Regressors) might benefit from larger feature spaces later.</p>
-<p>*Detail Report <a href="Reports/04_Exp_03_TFIDF_1_2_MaxFeatures_pynb.html">[Link-Exp_03]</a></p>
+<p>*Detail Report <a href="Reports/04_Exp_03_TFIDF_1_2_MaxFeatures_pynb.html" rel="noopener noreferrer" target="_blank">
+[Link-Exp_03]
+</a></p>
 </div>
 </div>
 </div>
@@ -7699,7 +7707,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="class_imbalance"></a></p>
-<h2 id="Experiment-04:-Addressing-Class-Imbalance">Experiment 04: Addressing Class Imbalance<a class="anchor-link" href="#Experiment-04:-Addressing-Class-Imbalance">¶</a></h2><p><strong>Problem:</strong> The model was consistently misclassifying Negative comments as Neutral. Recall for the Negative class was unacceptably low (~0.04).</p>
+<h2 id="VI.-Experiment-04:-Addressing-Class-Imbalance">VI. Experiment 04: Addressing Class Imbalance<a class="anchor-link" href="#VI.-Experiment-04:-Addressing-Class-Imbalance">¶</a></h2><p><strong>Problem:</strong> The model was consistently misclassifying Negative comments as Neutral. Recall for the Negative class was unacceptably low (~0.04).</p>
 <p><strong>Methodology:</strong> We compared three strategies to handle the skewed data:</p>
 <p><strong>Undersampling:</strong> Removing majority samples (Result: Loss of information, poor accuracy).</p>
 <p><strong>Class Weights:</strong> Penalizing the model for missing negative cases (Result: Moderate improvement).</p>
@@ -7726,7 +7734,9 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Results:</strong> SMOTE was the decisive winner. By augmenting the minority class in the training set, we forced the model to learn the decision boundary for "Negative" comments. This experiment was the turning point where we began to see the model actually recognize hostility and criticism.</p>
-<p>*Detail Report <a href="Reports/05_Exp_04_Handling_Imbalanced_Data.html">[Link-Exp_04]</a></p>
+<p>*Detail Report <a href="Reports/05_Exp_04_Handling_Imbalanced_Data.html" rel="noopener noreferrer" target="_blank">
+[Link-Exp_04]
+</a></p>
 </div>
 </div>
 </div>
@@ -7738,7 +7748,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="xgb"></a></p>
-<h2 id="Experiment-05:-Gradient-Boosting-&amp;-Hyperparameter-Tuning">Experiment 05: Gradient Boosting &amp; Hyperparameter Tuning<a class="anchor-link" href="#Experiment-05:-Gradient-Boosting-&amp;-Hyperparameter-Tuning">¶</a></h2><p><strong>Hypothesis:</strong> Tree-based bagging (Random Forest) is too "shallow" for this task. Gradient Boosting (XGBoost), which learns sequentially from errors, will extract more signal.</p>
+<h2 id="VII.-Experiment-05:-Gradient-Boosting-&amp;-Hyperparameter-Tuning">VII. Experiment 05: Gradient Boosting &amp; Hyperparameter Tuning<a class="anchor-link" href="#VII.-Experiment-05:-Gradient-Boosting-&amp;-Hyperparameter-Tuning">¶</a></h2><p><strong>Hypothesis:</strong> Tree-based bagging (Random Forest) is too "shallow" for this task. Gradient Boosting (XGBoost), which learns sequentially from errors, will extract more signal.</p>
 <p><strong>Methodology:</strong></p>
 <ul>
 <li><p>Algorithm: XGBoost (Extreme Gradient Boosting).</p>
@@ -7777,7 +7787,9 @@ a.anchor-link {
 </li>
 </ul>
 <p><strong>Analysis:</strong> The switch to boosting provided a massive +11.5% gain. The model showed excellent generalization (CV score and Test score were within 1%), proving it was robust and not overfitting.</p>
-<p>*Detail Report <a href="Reports/05_Exp_04_Handling_Imbalanced_Data.html">[Link-Exp_05]</a></p>
+<p>*Detail Report <a href="Reports/06_Exp_05_XGBoost_HPT.html" rel="noopener noreferrer" target="_blank">
+[Link-Exp_05]
+</a></p>
 </div>
 </div>
 </div>
@@ -7789,7 +7801,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="stacking"></a></p>
-<h2 id="Experiment-06:-Stacking-Ensemble-(The-Champion-Model)">Experiment 06: Stacking Ensemble (The Champion Model)<a class="anchor-link" href="#Experiment-06:-Stacking-Ensemble-(The-Champion-Model)">¶</a></h2><p><strong>Hypothesis:</strong> A single model has biases. Combining a Linear Model (good at high-dimensional text) with a Non-Linear Tree Model (good at interactions) will yield superior results.</p>
+<h2 id="VIII.-Experiment-06:-Stacking-Ensemble-(The-Champion-Model)">VIII. Experiment 06: Stacking Ensemble (The Champion Model)<a class="anchor-link" href="#VIII.-Experiment-06:-Stacking-Ensemble-(The-Champion-Model)">¶</a></h2><p><strong>Hypothesis:</strong> A single model has biases. Combining a Linear Model (good at high-dimensional text) with a Non-Linear Tree Model (good at interactions) will yield superior results.</p>
 <p><strong>Methodology:</strong> We constructed a Stacking Classifier:</p>
 <ul>
 <li><p>Base Learner 1: Logistic Regression (Linear) – effective on sparse TF-IDF matrices.</p>
@@ -7842,7 +7854,9 @@ weighted avg   0.86      0.86      0.86      7333</code></pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Conclusion:</strong> This architecture achieved our highest accuracy to date. The combination of linear and tree-based decision boundaries allowed the model to capture both simple keyword associations (e.g., "bad" = Negative) and complex contextual sarcasm.</p>
-<p>*Detail Report <a href="Reports/07_Exp_06_Stacking.html">[Link-Exp_06]</a></p>
+<p>*Detail Report <a href="Reports/07_Exp_06_Stacking.html" rel="noopener noreferrer" target="_blank">
+[Link-Exp_06]
+</a></p>
 </div>
 </div>
 </div>
@@ -7854,7 +7868,7 @@ weighted avg   0.86      0.86      0.86      7333</code></pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="future_work"></a></p>
-<h2 id="7.-Final-Conclusion-&amp;-Future-Work">7. Final Conclusion &amp; Future Work<a class="anchor-link" href="#7.-Final-Conclusion-&amp;-Future-Work">¶</a></h2><p><strong>Summary of Achievement</strong>
+<h2 id="IX.-Final-Conclusion-&amp;-Future-Work">IX. Final Conclusion &amp; Future Work<a class="anchor-link" href="#IX.-Final-Conclusion-&amp;-Future-Work">¶</a></h2><p><strong>Summary of Achievement</strong>
 This project demonstrates a disciplined, scientific approach to Machine Learning. We did not simply "try models until one worked." Instead, we diagnosed specific bottlenecks (Imbalance, Sparsity, Model Bias) and applied targeted solutions (SMOTE, Feature Tuning, Stacking).</p>
 <p><strong>Final Metrics (Test Set):</strong></p>
 <ul>
