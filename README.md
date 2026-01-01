@@ -25,7 +25,7 @@ Through a series of six controlled experiments, we evolved our approach from a b
 ---
 
 <a name="phase-1-exploratory-data-analysis-eda"></a>
-## Exploratory Data Analysis (EDA)
+## 3. Exploratory Data Analysis (EDA)
 **Objective:** To understand the distribution, quality, and linguistic characteristics of the dataset before modeling.
 
 **Key Findings:**
@@ -42,7 +42,7 @@ Through a series of six controlled experiments, we evolved our approach from a b
 ---
 
 <a name="experiment-01--02-baseline-modeling--text-representation"></a>
-## Experiment 01 & 02: Baseline Modeling & Text Representation
+## 4. Experiment 01 & 02: Baseline Modeling & Text Representation
 **Hypothesis:** A simple Bag-of-Words approach with a Random Forest classifier will serve as a sufficient baseline.
 
 **Methodology:**
@@ -64,7 +64,7 @@ While Bigrams provided the best text representation, the Random Forest model hit
 ---
 
 <a name="experiment-03-feature-space-optimization"></a>
-## Experiment 03: Feature Space Optimization
+## 5. Experiment 03: Feature Space Optimization
 **Objective:** To determine the optimal vocabulary size (`max_features`) for the TF-IDF vectorizer.
 
 **Methodology:**
@@ -83,7 +83,7 @@ We standardized on **1,000 features** for the intermediate experiments to mainta
 ---
 
 <a name="experiment-04-addressing-class-imbalance"></a>
-## Experiment 04: Addressing Class Imbalance
+## 6. Experiment 04: Addressing Class Imbalance
 **Problem:** The model was consistently misclassifying Negative comments as Neutral. Recall for the Negative class was unacceptably low (~0.04).
 
 **Methodology:**
@@ -102,7 +102,7 @@ We compared three strategies to handle the skewed data:
 ---
 
 <a name="experiment-05-gradient-boosting--hyperparameter-tuning"></a>
-## Experiment 05: Gradient Boosting & Hyperparameter Tuning
+## 7. Experiment 05: Gradient Boosting & Hyperparameter Tuning
 **Hypothesis:** Tree-based bagging (Random Forest) is too "shallow" for this task. Gradient Boosting (XGBoost), which learns sequentially from errors, will extract more signal.
 
 **Methodology:**
@@ -124,7 +124,7 @@ The switch to boosting provided a massive **+11.5% gain**. The model showed exce
 ---
 
 <a name="experiment-06-stacking-ensemble-the-champion-model"></a>
-## Experiment 06: Stacking Ensemble (The Champion Model)
+## 8. Experiment 06: Stacking Ensemble (The Champion Model)
 **Hypothesis:** A single model has biases. Combining a **Linear Model** (good at high-dimensional text) with a **Non-Linear Tree Model** (good at interactions) will yield superior results.
 
 **Methodology:**
@@ -164,7 +164,7 @@ This architecture achieved our highest accuracy to date. The combination of line
 
 ---
 <a name="final-conclusion--future-work"></a>
-## 7. Final Conclusion & Future Work
+## 9. Final Conclusion & Future Work
 
 ### Summary of Achievement
 This project demonstrates a disciplined, scientific approach to Machine Learning. We did not simply "try models until one worked." Instead, we diagnosed specific bottlenecks (Imbalance, Sparsity, Model Bias) and applied targeted solutions (SMOTE, Feature Tuning, Stacking).
